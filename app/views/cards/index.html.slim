@@ -1,21 +1,7 @@
-table
-  thead
-    tr
-      th Word
-      th Description
-      th
-      th
-      th
-
-  tbody
+.container
+  .row
     - @cards.each do |card|
-      tr
-        td = card.word
-        td = card.description
-        td = link_to 'Show', card
-        td = link_to 'Edit', edit_card_path(card)
-        td = link_to 'Destroy', card, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
+      .col-sm-3.col-xs-6
+        = render "cards/item", card: card
 
 = link_to 'New Card', new_card_path
