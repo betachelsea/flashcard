@@ -7,11 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="l-header container-fluid">
-    <div class="container">
-      <h1 class="h1">FlashCard</h1>
-    </div>
-  </div>
+  <%= render "/layouts/header" %>
   <div class="container">
     <%= yield %>
   </div>
