@@ -1,0 +1,11 @@
+@import 'globals/all';
+
+// Bootstrapのスタイル上書き
+.btn-primary {
+  background-color: $white;
+  color: $baseTextColor;
+
+  &:hover {
+    background-color: $accentColor;
+  }
+}
