@@ -1,7 +1,6 @@
-.container
-  .row
-    - @cards.each do |card|
-      .col-sm-3.col-xs-6
-        = render "cards/item", card: card
+.row
+  - @cards.each do |card|
+    .col-sm-3.col-xs-6
+      = render "cards/item", card: card
 
 = link_to 'New Card', new_card_path
