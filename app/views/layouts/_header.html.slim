@@ -1,6 +1,5 @@
 .l-header.navbar.navbar-default
   .container
     .navbar-header
-      .navbar-brand
-        | FlashCard
+      = link_to "FlashCard", root_path, class: "navbar-brand"
     = link_to "Card新規作成", new_card_path, class: "btn btn-primary navbar-btn pull-right"
