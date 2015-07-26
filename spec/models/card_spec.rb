@@ -4,10 +4,12 @@ describe Card, type: :model do
   let(:card) { FactoryGirl.create(:card) }
 
   describe 'with validation' do
+    describe 'wordが空だった場合' do
+      it { expect(FactoryGirl.build(:card, word: nil)).to_not be_valid }
+      it { expect(FactoryGirl.build(:card, word: "")).to_not be_valid }
+    end
     describe '登録wordが既にあった場合' do
-      it 'validationが通らない' do
-        expect(FactoryGirl.build(:card, word: card.word)).to_not be_valid
-      end
+      it { expect(FactoryGirl.build(:card, word: card.word)).to_not be_valid }
     end
   end
 
