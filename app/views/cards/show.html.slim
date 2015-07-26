@@ -1,12 +1,10 @@
 p#notice = notice
 
+.l-cardDetail.clearfix
+  h1.pull-left = @card.word
+  = link_to edit_card_path(@card)
+    i.fa.fa-pencil-square-o
 p
-  strong Word:
-  = @card.word
-p
-  strong Description:
   = @card.description
 
-= link_to 'Edit', edit_card_path(@card)
-'|
 = link_to 'Back', cards_path

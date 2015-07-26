@@ -6,10 +6,10 @@
         - @card.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .field.form-group
     = f.label :word
-    = f.text_field :word
-  .field
+    = f.text_field :word, class: "form-control"
+  .field.form-group
     = f.label :description
-    = f.text_area :description
-  .actions = f.submit
+    = f.text_area :description, class: "form-control"
+  .actions = f.submit '新規作成', class: "btn btn-default"
