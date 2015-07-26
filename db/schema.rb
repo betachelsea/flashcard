@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150720135705) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: :cascade do |t|
     t.string   "word"
     t.text     "description"
@@ -20,6 +23,6 @@ ActiveRecord::Schema.define(version: 20150720135705) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "cards", ["word"], name: "index_cards_on_word", unique: true
+  add_index "cards", ["word"], name: "index_cards_on_word", unique: true, using: :btree
 
 end
