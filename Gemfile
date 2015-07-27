@@ -33,3 +33,5 @@ group :development, :test do
   gem 'pry-byebug'
 end
 
+# for Heroku
+gem 'rails_12factor', group: :production
