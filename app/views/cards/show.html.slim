@@ -1,9 +1,12 @@
 p#notice = notice
 
 .l-cardDetail.clearfix
-  h1.pull-left = @card.word
-  = link_to edit_card_path(@card)
-    i.fa.fa-pencil-square-o
+  .l-cardDetail_header
+    h1 = @card.word
+    = link_to @card, data: {confirm: 'Are you sure?'}, method: :delete, class: "btn btn-primary pull-right"
+      i.fa.fa-trash-o &ensp;削除する
+    = link_to edit_card_path(@card), class: "btn btn-primary pull-right"
+      i.fa.fa-pencil-square-o &ensp;編集する
 p
   = @card.description
 
