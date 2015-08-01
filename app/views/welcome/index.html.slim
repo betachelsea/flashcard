@@ -1,2 +1,11 @@
-p this is index
-= link_to "単語カード一覧", cards_path
+h2 単語一覧
+.row
+  - @cards.each do |card|
+    .col-sm-3.col-xs-6
+      = render "cards/item", card: card
+
+h2 文章一覧
+.row
+  - @paragraphs.each do |paragraph|
+    .col-sm-3.col-xs-6
+      = render "paragraphs/item", paragraph: paragraph
