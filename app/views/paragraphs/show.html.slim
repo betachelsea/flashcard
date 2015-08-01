@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Body:
+  = @paragraph.body
+p
+  strong Ja body:
+  = @paragraph.ja_body
+
+= link_to 'Edit', edit_paragraph_path(@paragraph)
+'|
+= link_to 'Back', paragraphs_path

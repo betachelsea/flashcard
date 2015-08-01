@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720135705) do
+ActiveRecord::Schema.define(version: 20150730135615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,5 +24,15 @@ ActiveRecord::Schema.define(version: 20150720135705) do
   end
 
   add_index "cards", ["word"], name: "index_cards_on_word", unique: true, using: :btree
+
+  create_table "paragraphs", force: :cascade do |t|
+    t.string   "body",       null: false
+    t.string   "ja_body",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "paragraphs", ["body"], name: "index_paragraphs_on_body", unique: true, using: :btree
+  add_index "paragraphs", ["ja_body"], name: "index_paragraphs_on_ja_body", unique: true, using: :btree
 
 end
