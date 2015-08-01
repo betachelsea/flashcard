@@ -6,10 +6,10 @@
         - @paragraph.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .field.form-group
     = f.label :body
-    = f.text_field :body
-  .field
+    = f.text_field :body, class: "form-control"
+  .field.form-group
     = f.label :ja_body
-    = f.text_field :ja_body
-  .actions = f.submit
+    = f.text_field :ja_body, class: "form-control"
+  .actions = f.submit 'OK', class: "btn btn-default"
